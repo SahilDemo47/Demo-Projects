@@ -1,0 +1,600 @@
+/* Common Material CSS
+    ========================================================================== */
+body {
+    --mdc-typography-button-font-family: var(--font-medium);
+    --mdc-typography-button-letter-spacing: normal;
+    --mdc-tab-indicator-active-indicator-color: var(--selective-yellow-500);
+    --mdc-typography-body1-font-family: var(--font-primary);
+    --mdc-dialog-supporting-text-font: var(--font-primary);
+    --mdc-dialog-subhead-font: var(--font-primary);
+    --mdc-checkbox-unselected-icon-color: var(--woodsmoke-300);
+    --mdc-typography-body2-letter-spacing: normal;
+    --mdc-checkbox-selected-icon-color: var(--selective-yellow-500);
+    --mdc-theme-primary: var(--selective-yellow-500);
+    --mdc-typography-body2-font-family: var(--font-primary);
+}
+
+/* Mat tabs CSS
+    ========================================================================== */
+.custom-mat-tabs {
+    .mat-mdc-tab-header {
+        margin-bottom: 24px;
+        .mat-mdc-tab-list,
+        .mat-mdc-tab-label-container,
+        .mdc-tab {
+            flex-grow: inherit !important;
+        }
+        .mdc-tab {
+            padding: 0px 4px 5px 4px !important;
+            min-width: auto !important;
+            height: auto !important;
+            position: relative;
+        }
+        .mdc-tab__text-label {
+            color: var(--woodsmoke-400);
+        }
+        .mdc-tab__ripple,
+        .mat-mdc-tab-ripple {
+            display: none;
+        }
+        .mdc-tab--active {
+            .mdc-tab__text-label {
+                color: var(--selective-yellow-500) !important;
+            }
+        }
+    }
+    .mat-mdc-tab-body-wrapper {
+        flex: 1;
+        border: 1px solid var(--woodsmoke-50);
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.04);
+        background: var(--white);
+        border-radius: 20px;
+    }
+    &.mat-tabs-divider {
+        .mat-mdc-tab-labels {
+            grid-gap: 33px;
+            height: 36px;
+        }
+        .mdc-tab {
+            &:after {
+                content: '';
+                height: 28px;
+                width: 1px;
+                display: inline-block;
+                background: var(--woodsmoke-100);
+                position: absolute;
+                right: -16px;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}
+
+/* Mat toggle CSS
+    ========================================================================== */
+.mat-mdc-slide-toggle {
+    --mdc-switch-track-height: 20px;
+    --mdc-switch-track-shape: 12px;
+    --mdc-switch-handle-width: 16px;
+    --mdc-switch-handle-height: 16px;
+    --mdc-switch-handle-width: 16px;
+    --mdc-switch-state-layer-size: 0;
+    --mdc-switch-unselected-hover-handle-color: var(--white);
+    --mdc-switch-unselected-handle-color: var(--white);
+    --mdc-switch-unselected-focus-handle-color: var(--white);
+    --mdc-switch-unselected-hover-handle-color: var(--white);
+    --mdc-switch-unselected-pressed-handle-color: var(--white);
+    --mdc-switch-selected-handle-color: var(--white);
+    --mdc-switch-unselected-icon-size: 0;
+    --mdc-switch-selected-icon-size: 0;
+    --mdc-switch-handle-elevation: 0 1px 2px 0 rgba(16, 24, 40, 0.06), 0 1px 3px 0 rgba(16, 24, 40, 0.1);
+    --mdc-switch-unselected-track-color: var(--woodsmoke-100);
+    .mdc-switch__track::before {
+        background: var(--woodsmoke-100);
+    }
+    &.mat-mdc-slide-toggle-checked {
+        .mdc-switch__track::after {
+            background: var(--selective-yellow-400) !important;
+        }
+        .mdc-switch__handle {
+            left: -2px;
+            &:after {
+                background-color: var(--white) !important;
+            }
+        }
+    }
+    .mdc-switch__handle {
+        left: 2px;
+    }
+    .mdc-switch .mdc-switch__handle-track {
+        width: 16px;
+    }
+}
+
+/* Mat menu CSS
+    ========================================================================== */
+.custom-mat-menu {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08) !important;
+    background: var(--white);
+    border: 1px solid var(--woodsmoke-100);
+    border-radius: 8px !important;
+    .mat-mdc-menu-content {
+        padding: 12px 0;
+        .mat-mdc-menu-item {
+            min-height: 36px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .mdc-list-item__primary-text {
+                font-size: 14px;
+                font-family: var(--font-primary);
+            }
+        }
+    }
+}
+
+/* Mat dialog CSS
+    ========================================================================== */
+.mat-mdc-dialog-container {
+    .mdc-dialog__surface {
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        overflow: hidden;
+    }
+}
+
+/* Mat select CSS
+    ========================================================================== */
+.custom-mat-select {
+    width: 100%;
+    border-radius: 8px;
+    .mat-mdc-select-min-line{
+        font-size: 14px !important;
+        color:  #000000de !important;
+    }
+    .mdc-text-field {
+        padding: 0;
+    }
+    .mat-mdc-form-field-infix {
+        padding: 0;
+        min-height: auto;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: transparent;
+    }
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+        padding: 0;
+    }
+    .mat-mdc-select-arrow {
+        background-image: url(../../assets/images/chevron-icon.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        svg {display: none;}
+    }
+    .mdc-line-ripple,
+    .mat-mdc-form-field-focus-overlay,
+    .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+    }
+    .mat-mdc-select-placeholder {
+        color: var(--woodsmoke-400) !important;
+    }
+}
+
+/* Mat checkbox CSS
+    ========================================================================== */
+.custom-mat-checkbox {
+    .mdc-checkbox {
+        padding: 0 !important;
+        width: 16px;
+        height: 16px;
+        &__background {
+            top: 0 !important;
+            left: 0 !important;
+            border-radius: 4px;
+            border: 1px solid var(--woodsmoke-300) !important;
+            width: 16px;
+            height: 16px;
+            background-color: transparent !important;
+        }
+        &__native-control {
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            left: 0 !important;
+            width: 16px !important;
+            height: 16px !important;
+            &:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+                border-color: var(--woodsmoke-300) !important;
+            }
+        }
+        &__checkmark {
+            top: 1px;
+            right: 1px;
+            left: 1px;
+            width: 80%;
+        }
+    }
+    label {
+        padding-left: 6px !important;
+        font-family: var(--font-medium);
+        font-size: 16px;
+        color: var(--woodsmoke-700);
+        letter-spacing: 0;
+    }
+    .mat-ripple,
+    .mdc-checkbox__ripple,
+    .mat-mdc-checkbox-touch-target {
+        display: none;
+    }
+    &.mdc-checkbox--disabled {
+        opacity: .5;
+    }
+    &.mat-mdc-checkbox-checked {
+        .mdc-checkbox__background {
+            border-color: var(--selective-yellow-500) !important;
+            background-color: var(--selective-yellow-500) !important;
+        }
+    }
+    &.checkbox-lg {
+        .mdc-checkbox {
+            width: 20px;
+            height: 20px;
+            &__background {
+                border-radius: 6px;
+                width: 20px;
+                height: 20px;
+            }
+            &__native-control {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            &__checkmark {
+                top: 2px;
+                right: 2px;
+                left: 2px;
+                width: 75%;
+            }
+        }
+        label {
+            padding-left: 12px !important;
+        }
+    }
+}
+
+/* Mat checkbox CSS
+    ========================================================================== */
+.custom-mat-radio {
+    --mdc-radio-selected-focus-icon-color: var(--selective-yellow-500) !important;
+    --mdc-radio-selected-hover-icon-color: var(--selective-yellow-500) !important;
+    --mdc-radio-selected-icon-color: var(--selective-yellow-500) !important;
+    --mdc-radio-selected-pressed-icon-color: var(--selective-yellow-500) !important;
+    --mat-mdc-radio-checked-ripple-color: var(--selective-yellow-500) !important;
+    --mdc-radio-state-layer-size: 16px !important;
+    --mdc-radio-unselected-icon-color: var(--woodsmoke-300) !important;
+    .mdc-radio__outer-circle {
+        border-width: 1px;
+    }
+    .mdc-radio {
+        width: 16px;
+        height: 16px;
+        &__background {
+            width: 16px;
+            height: 16px;
+        }
+        &__inner-circle {
+            top: -2px;
+            left: -2px;
+        }
+    }
+    label {
+        padding-left: 6px !important;
+        font-family: var(--font-medium);
+        font-size: 16px;
+        color: var(--woodsmoke-700);
+        white-space: nowrap;
+        letter-spacing: 0;
+    }
+    .mat-mdc-radio-touch-target {
+        width: 16px;
+            height: 16px;
+    }
+}
+
+/* Mat calender CSS
+    ========================================================================== */
+.mat-calendar {
+    .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+        background-color: antiquewhite;
+    }
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+        border-color: var(--selective-yellow-500);
+        background-color: antiquewhite !important;
+    }
+    .mat-calendar-body-selected {
+        background-color: var(--selective-yellow-500);
+    }
+}
+
+/* Mat option CSS
+    ========================================================================== */
+.mat-mdc-option {
+    --mdc-typography-body1-font-family: var(--font-primary);
+    --mdc-typography-body1-font-size: 14px;
+    min-height: 44px;
+    &-pseudo-checkbox {
+        display: none !important;
+    }
+}
+
+/* Mat surface CSS
+    ========================================================================== */
+.mdc-menu-surface {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+/* Mat sidenav CSS
+    ========================================================================== */
+.sidebar {
+    position: inherit !important;
+    &_nav {
+        width: 59%;
+        box-shadow: none !important;
+        color: var(--woodsmoke-800);
+        background-color: transparent;
+        overflow-y: hidden !important;
+        @media (max-width: 1400px) {
+            width: 75%;
+        }
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+    .mat-drawer-inner-container {
+        overflow: hidden;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: -4px 0 20px 0 rgba(0, 0, 0, 4%);
+    }
+    .mat-drawer-backdrop.mat-drawer-shown{
+        background-color: transparent !important;
+    }
+}
+
+.sidepanel {
+    height: 100%;
+    padding: 24px 0;
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        margin-bottom: 32px;
+        &_title {
+            font-size: 24px;
+            color: var(--woodsmoke-800);
+            font-family: var(--font-medium);
+        }
+        &_closer {
+            border: 1px solid var(--woodsmoke-100);
+            border-radius: 50px;
+            padding: 12px;
+            width: 44px;
+            min-width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: auto;
+            transition: var(--transition-primary);
+            &:hover {
+                background-color: var(--woodsmoke-100);
+            }
+        }
+    }
+    &-body {
+        padding: 0 24px;
+        height: calc(100% - 76px);
+        overflow: auto;
+    }
+}
+
+.sidebar-fullwidth{
+    .mat-drawer-inner-container{
+        border-radius: 0px !important;
+    }
+}
+
+/* Ng select CSS
+    ========================================================================== */
+.ng-select {
+    &.ng-select-opened{
+        border: 1px solid var(--selective-yellow-500);
+        transition: ease-in180ms border;
+        .ng-value-label {
+            font-weight: 600;
+        }
+    }
+    .ng-value-label{
+        color:  #000000de !important;
+    }
+    .ng-value{
+        margin-right: 0px !important;
+    }
+    .ng-dropdown-panel{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+        background-color: var(--mdc-theme-surface, #fff);
+        border: 0;
+        .ng-dropdown-panel-items{
+            padding: 8px 0;
+        }
+    }
+    .ng-clear-wrapper{
+        margin-left: 2px;
+    }
+    &.custom-ng-select {
+        min-height: 0px;
+        .ng-select-container  {
+            min-height: 36px;
+            border-radius: 2px;
+            border: 0;
+            box-shadow: none !important;
+            &:hover {
+                box-shadow: none !important;
+            }
+        }
+        .ng-option {
+            display: flex !important;
+            position: relative;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 0;
+            padding-left: 16px;
+            padding-right: 16px;
+            cursor: pointer;
+            min-height: 48px;
+            &.ng-option-selected , &.ng-option-marked{
+                background: rgba(0, 0, 0, 0.04) !important;
+                color: #000000de !important;
+                .ng-option-label{
+                    font-weight: 400 !important;
+                }
+            }
+        }
+        .ng-placeholder {
+            color: var(--woodsmoke-400) !important;
+            font-size: 14px;
+            font-family: var(--font-primary);
+        }
+    }
+    &.input-container_input {
+        padding: 3px 1px;
+        &.input-container_input--thin {
+            padding: 1px;
+        }
+    }
+    // .ng-clear-wrapper {
+    //     display: none;
+    // }
+    .ng-arrow-wrapper {
+        .ng-arrow {
+            display: none !important;
+        }
+        background-image:url(../../assets/images/chevron-icon.svg);
+        height: 25px;
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+}
+
+/* Ng option CSS
+    ========================================================================== */
+
+.ng-dropdown-panel{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    background-color: var(--mdc-theme-surface, #fff);
+    border: 0;
+    padding: 0;
+    margin-top: 0px !important;
+    .ng-dropdown-panel-items{
+        padding: 8px 0;
+    }
+    .ng-option {
+        display: flex !important;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        cursor: pointer;
+        min-height: 48px;
+        &.ng-option-selected , &.ng-option-marked{
+            background: rgba(0, 0, 0, 0.04) !important;
+            color: #000000de !important;
+            .ng-option-label{
+                font-weight: 400 !important;
+                flex: 1;
+            }
+        }
+        .ng-option-label{
+                flex: 1;
+            }
+    }
+}
+
+.ng-select-arrow-none {
+    .ng-arrow-wrapper {
+        display: none;
+    }
+}
+.school-field-dropdown {
+    .ng-option {
+        border-bottom: 1px solid #E7E7E7;
+        min-height: 38px;
+        padding: 4px 10px;
+        &.ng-option-disabled {
+            border-bottom: 0;
+        }
+    }
+    &.ng-dropdown-panel {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 12px 50px 0px #00000029;
+        min-width: 423px !important;
+        .ng-dropdown-panel-items {
+            padding: 0;
+        }
+    }
+}
+.ng-option:has(.student-option_header) {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    pointer-events: none;
+    .student-option {
+        &_detail {
+            font-size: 14px;
+            color: #151517;
+        }
+    }
+}
+.ng-dropdown-panel {
+    .ng-dropdown-header{
+        background-color: #0000000a;
+    }
+}
+
+.custom-date-picker {
+    border: 1px solid var(--woodsmoke-100);
+    border-radius: 12px;
+    padding: 0px 12px;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    overflow: hidden;
+    .mat-mdc-form-field-flex {
+        align-items: center;
+    }
+    .mat-mdc-icon-button {
+        width: auto;
+        height: 42px;
+        padding: 0;
+    }
+    .mdc-icon-button__ripple,
+    .mat-mdc-button-touch-target,
+    .mat-mdc-button-ripple {
+        display: none;
+    }
+    .mat-mdc-form-field-infix {
+        width: 181px !important;
+    }
+}
+
+
+.cdk-overlay-pane:has(.add-bulk-route-popup-full-screen){
+    max-width: 99vw !important;
+    width: 100% !important;
+    height: 99vh;
+}

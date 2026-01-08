@@ -1,0 +1,80 @@
+@import "@ag-grid-community/styles/ag-grid.css";
+@import "@ag-grid-community/styles/ag-theme-alpine.css";
+
+
+.ag-theme-alpine {
+  -webkit-font-smoothing: antialiased;
+  --ag-font-size: 14px;
+  --ag-font-family: var(--font-primary);
+  --ag-foreground-color: var(--woodsmoke-950);
+  --ag-header-background-color: #fafafb;
+  --ag-borders-critical: solid 1px;
+  --ag-border-color: var(--woodsmoke-100);
+  --ag-range-selection-border-color: transparent;
+  --ag-input-border-color: #dcdddd;
+  --ag-borders: solid 0px;
+  --ag-border-radius: 0px;
+  --ag-header-column-resize-handle-color: var(--woodsmoke-100);
+  --ag-header-foreground-color: var(--woodsmoke-950);
+  --ag-odd-row-background-color: var(--white);
+  --ag-row-border-color: var(--woodsmoke-100);
+  --ag-row-hover-color: var(--woodsmoke-50);
+  --ag-internal-calculated-line-height: 1.5;
+
+    .ag-header-cell-text {
+      font-weight: 500;
+    }
+    .ag-cell {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+}
+
+.ag-grid-default {
+  .inner-wrapper {
+    &_body {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+  }
+  &--non-searchable {
+    .grid-wrapper_header {
+      display: none;
+    }
+    .grid-wrapper_grid {
+      height: 100% !important;
+    }
+  }
+}
+.ag-row-focus:before{
+  content: "";
+  background-color: var(--woodsmoke-100);
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.ag-row-selected::before {
+  background-color: var(--ag-selected-row-background-color) !important;
+}
+.ag-cell-data-changed {
+  background-color: transparent !important;
+}
+
+.ag-header-cell.ag-header-cell-filtered .ag-icon-filter {
+  color: #f49e0c !important; /* Example: Change to red */
+}
+.ag-input-field-input {
+  border: 1px solid var(--woodsmoke-100) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
+  background: var(--white) !important;
+  width: 100%;
+  line-height: 24px;
+  color: var(--woodsmoke-800) !important;
+  overflow: hidden;
+  padding: 7px 12px;
+}

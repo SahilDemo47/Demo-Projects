@@ -1,0 +1,308 @@
+@import "color";
+@import "fonts";
+@import "form";
+@import "input";
+@import "angular-material-overrides";
+@import "table";
+
+:root {
+  --box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
+  --box-shadow-sm: 0px 0px 7px rgba(0, 0, 0, 0.07);
+  --border-radius-sm: 5px;
+  --transition-primary: ease all 200ms;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  background: #fafafb;
+  font-family: var(--font-primary);
+  color: var(--woodsmoke-800);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Common CSS
+    ========================================================================== */
+ol,ul { list-style: none;}
+a,.btn {transition: all 0.5s ease;}
+a:active,a:hover,a:focus,.btn:focus,.btn:active,.btn:hover {outline: 0;}
+a { color: var(--selective-yellow-500); text-decoration: none; cursor: pointer;}
+a:focus, a:hover { color: var(--woodsmoke-400); text-decoration: none;}
+b,strong { font-weight: bold;}
+small, .small { font-size: 12px; font-family: var(--font-primary);}
+sub,sup { font-size: 72%; line-height: 0; position: relative; vertical-align: baseline;}
+sup { top: -0.4em;}
+sub { bottom: -0.25em;}
+img { border: 0; vertical-align: middle;}
+hr { box-sizing: content-box;height: 0;}
+*:focus { outline: 0;}
+svg:not(:root) { overflow: hidden;}
+.hide { display: none;}
+
+/* Resize CSS
+    ========================================================================== */
+.resize-none {resize: none;}
+
+/* Cursor CSS
+    ========================================================================== */
+.cursor-pointer {cursor: pointer;}
+.pe-none {pointer-events: none;}
+
+/* Radius CSS
+    ========================================================================== */
+.radius-12 {border-radius: 12px !important;}
+.radius-8 {border-radius: 8px !important;}
+
+/* Disalbed CSS
+    ========================================================================== */
+.disabled {
+    opacity: .8;
+    pointer-events: none;
+}
+
+/* Feedback CSS
+    ========================================================================== */
+.error-msg {color: #dc3545;}
+
+/* Scrollbar CSS
+    ========================================================================== */
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--woodsmoke-300);
+  border-radius: 16px;
+}
+
+/* Row CSS
+    ========================================================================== */
+.row {
+  &-md {
+    margin-right: -10px;
+    margin-left: -10px;
+    >* {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+  &-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+    >* {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+/* Global CSS
+    ========================================================================== */
+.white-box {
+  border: 1px solid var(--woodsmoke-50);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.04);
+  background: var(--white);
+}
+
+.gray-box {
+  border: 1px solid var(--woodsmoke-100);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--woodsmoke-50);
+}
+
+
+.text-ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Status CSS
+    ========================================================================== */
+.status-badge{
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: var(--font-medium);
+  line-height: 22px;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  display: flex;
+  align-items: center;
+  &.status-badge-sm {
+    padding: 3px 8px;
+    font-size: 12px;
+    line-height: 16px;
+    .status-badge-dot{
+      width: 6px;
+      height: 6px;
+    }
+  }
+  &.status-badge-green {
+      border-color: #54C68D;
+      color: #54C68D;
+      .status-badge-dot {
+          background-color:#54C68D;
+      }
+  }
+  &.status-badge-grey {
+      border-color: #DADADD;
+      color: #DADADD;
+      .status-badge-dot {
+          background-color:#DADADD;
+      }
+  }
+  &.status-paid {
+    background-color: #ECFDF3;
+    border-color: #ECFDF3;
+    color: #027A48;
+    .status-badge-dot {
+      background-color:#027A48;
+    }
+  }
+  &.status-approved {
+    background-color: #ECFDF3;
+    border-color: #ECFDF3;
+    color: #027A48;
+    .status-badge-dot {
+      background-color:#027A48;
+    }
+  }
+  &.status-pending {
+    background-color: #fff0d7;
+    border-color: #fff0d7;
+    color: #f49e0c;
+    .status-badge-dot {
+      background-color:#ffbe4d;
+    }
+  }
+  &.status-processing {
+    background-color: #EFF8FF;
+    border-color: #EFF8FF;
+    color: #175CD3;
+    .status-badge-dot {
+      background-color:#175CD3;
+    }
+  }
+  &.status-failed {
+    background-color: #FEF3F2;
+    border-color: #FEF3F2;
+    color: #B42318;
+    .status-badge-dot {
+      background-color:#B42318;
+    }
+  }
+    &.status-error {
+    background-color: #FEF3F2;
+    border-color: #FEF3F2;
+    color: #B42318;
+    .status-badge-dot {
+      background-color:#B42318;
+    }
+  }
+  .status-badge-dot{
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 100%;
+      margin-right: 6px;
+  }
+}

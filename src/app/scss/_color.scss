@@ -1,0 +1,92 @@
+:root {
+	--white: #fff;
+	--woodsmoke-50: #f7f7f8;
+	--woodsmoke-100: #eeeef0;
+	--woodsmoke-200: #dadadd;
+	--woodsmoke-300: #b9bac0;
+	--woodsmoke-400: #93949d;
+	--woodsmoke-500: #757682;
+	--woodsmoke-600: #5f5f6a;
+	--woodsmoke-700: #4e4e56;
+	--woodsmoke-800: #42424a;
+	--woodsmoke-900: #3a3a40;
+	--woodsmoke-950: #151517;
+	--selective-yellow-50: #fffbeb;
+	--selective-yellow-100: #fef3c7;
+	--selective-yellow-200: #fde68a;
+	--selective-yellow-300: #fbd34e;
+	--selective-yellow-400: #fabb18;
+	--selective-yellow-500: #f49e0c;
+	--selective-yellow-600: #d87707;
+	--selective-yellow-700: #b3530a;
+	--selective-yellow-800: #92400e;
+	--selective-yellow-900: #78350f;
+	--selective-yellow-950: #451a03;
+	--color-error:#F04438;
+	--color-blue:#175CD3;
+	--color-lightblue:#EFF8FF;
+	--color-pink:#C11574;
+	--color-lightpink:#FDF2FA;
+	--color-green:#1d9f62
+}
+
+// text colors css
+.text-white {color: var(--white) !important;}
+.text-woodsmoke-50 {color: var(--woodsmoke-50);}
+.text-woodsmoke-100 {color: var(--woodsmoke-100);}
+.text-woodsmoke-200 {color: var(--woodsmoke-200);}
+.text-woodsmoke-300 {color: var(--woodsmoke-300);}
+.text-woodsmoke-400 {color: var(--woodsmoke-400) !important;}
+.text-woodsmoke-500 {color: var(--woodsmoke-500);}
+.text-woodsmoke-600 {color: var(--woodsmoke-600);}
+.text-woodsmoke-700 {color: var(--woodsmoke-700);}
+.text-woodsmoke-800{color: var(--woodsmoke-800);}
+.text-woodsmoke-900 {color: var(--woodsmoke-900);}
+.text-woodsmoke-950 {color: var(--woodsmoke-950);}
+.text-selective-yellow-50 {color: var(--selective-yellow-50);}
+.text-selective-yellow-100 {color: var(--selective-yellow-100);}
+.text-selective-yellow-200 {color: var(--selective-yellow-200);}
+.text-selective-yellow-300 {color: var(--selective-yellow-300);}
+.text-selective-yellow-400 {color: var(--selective-yellow-400);}
+.text-selective-yellow-500 {color: var(--selective-yellow-500);}
+.text-selective-yellow-600 {color: var(--selective-yellow-600);}
+.text-selective-yellow-700 {color: var(--selective-yellow-700);}
+.text-selective-yellow-800 {color: var(--selective-yellow-800);}
+.text-selective-yellow-900 {color: var(--selective-yellow-900);}
+.text-selective-yellow-950 {color: var(--selective-yellow-950);}
+.text-error{color: var(--color-error) !important;}
+.text-blue{color: var(--color-blue);}
+.text-lightblue{color: var(--color-lightblue);}
+.text-pink{color: var(--color-pink);}
+.text-lightpink{color: var(--color-lightpink);}
+.text-success{color: var(--color-green)}
+
+//  background colors css
+.bg-white {background-color: var(--white) !important;}
+.bg-woodsmoke-50 {background-color: var(--woodsmoke-50) !important;}
+.bg-woodsmoke-100 {background-color: var(--woodsmoke-100);}
+.bg-woodsmoke-200 {background-color: var(--woodsmoke-200);}
+.bg-woodsmoke-300 {background-color: var(--woodsmoke-300);}
+.bg-woodsmoke-400 {background-color: var(--woodsmoke-400);}
+.bg-woodsmoke-500 {background-color: var(--woodsmoke-500);}
+.bg-woodsmoke-600 {background-color: var(--woodsmoke-600);}
+.bg-woodsmoke-700 {background-color: var(--woodsmoke-700);}
+.bg-woodsmoke-800{background-color: var(--woodsmoke-800);}
+.bg-woodsmoke-900 {background-color: var(--woodsmoke-900);}
+.bg-woodsmoke-950 {background-color: var(--woodsmoke-950);}
+.bg-selective-yellow-50 {background-color: var(--selective-yellow-50);}
+.bg-selective-yellow-100 {background-color: var(--selective-yellow-100);}
+.bg-selective-yellow-200 {background-color: var(--selective-yellow-200);}
+.bg-selective-yellow-300 {background-color: var(--selective-yellow-300);}
+.bg-selective-yellow-400 {background-color: var(--selective-yellow-400);}
+.bg-selective-yellow-500 {background-color: var(--selective-yellow-500);}
+.bg-selective-yellow-600 {background-color: var(--selective-yellow-600);}
+.bg-selective-yellow-700 {background-color: var(--selective-yellow-700);}
+.bg-selective-yellow-800 {background-color: var(--selective-yellow-800);}
+.bg-selective-yellow-900 {background-color: var(--selective-yellow-900);}
+.bg-selective-yellow-950 {background-color: var(--selective-yellow-950);}
+.bg-error{background-color: var(--color-error);}
+.bg-blue{background-color: var(--color-blue);}
+.bg-lightblue{background-color: var(--color-lightblue);}
+.bg-pink{background-color: var(--color-pink);}
+.bg-lightpink{background-color: var(--color-lightpink);}

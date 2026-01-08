@@ -1,0 +1,113 @@
+.input-container {
+  margin-bottom: 16px;
+    &--relative {
+      position: relative;
+    }
+    &_label {
+        margin-bottom: 6px;
+        font-family: var(--font-medium);
+        font-size: 14px;
+        color: var(--woodsmoke-400);
+        line-height: 20px;
+        @media (max-width: 1400px) {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+    }
+    &_asterisk {
+      color: var(--border-error);
+      font-weight: bold;
+      margin-left: 3px;
+      font-size: 1.2em;
+    }
+    &_wrapper {
+      position: relative;
+    }
+    &_input {
+        border: 1px solid var(--woodsmoke-100);
+        border-radius: 8px;
+        padding: 9px 12px;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+        background: var(--white);
+        width: 100%;
+        line-height: 24px;
+        color: var(--woodsmoke-800);
+        overflow: hidden;
+        &--thin {
+          padding: 7px 12px;
+        }
+        &--extra-thin{
+          padding: 3px 8px;
+        }
+        &:focus {
+            border: 1px solid var(--selective-yellow-500);
+            transition: ease-in 180ms border;
+        }
+        &:disabled,
+        &.disabled {
+          box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+          background: var(--woodsmoke-50);
+          border: 1px solid var(--woodsmoke-100);
+        }
+        &--icon {
+          padding-left: 40px;
+        }
+    }
+    &_select{
+      border: 1px solid var(--woodsmoke-100);
+      border-radius: 8px;
+      padding: 9px 12px;
+      box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+      background: var(--white);
+      width: 100%;
+      line-height: 24px;
+
+      &:focus {
+        border: 1px solid var(--selective-yellow-500);
+        transition: ease-in 180ms border;
+    }
+    }
+    &_icon {
+      position: absolute;
+      left: 1px;
+      bottom: 1px;
+      width: 40px;
+      height: calc(100% - 2px);
+      color: var(--woodsmoke-600);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &--iconRight {
+        right: 1px;
+        left: auto;
+      }
+      .mdc-icon-button {
+        width: 40px;
+        height: calc(100% - 2px) !important;
+        padding: 0 !important;
+        background-image: url(../../assets/images/calender-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        &__ripple,
+        .mat-mdc-button-touch-target,
+        .mat-mdc-focus-indicator,
+        .mat-ripple,
+        svg {
+          display: none;
+        }
+      }
+    }
+    &_arrow--icon{
+      position: absolute;
+      right: 14px;
+      top: 38px;
+      pointer-events: none;
+      cursor: pointer !important;
+     }
+    }
+
+
+  input::placeholder {
+    color: var(--woodsmoke-400);
+    font-family: var(--font-primary);
+  }
