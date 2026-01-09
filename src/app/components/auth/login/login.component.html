@@ -1,0 +1,28 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to your account</p>
+
+    <form [formGroup]="form" (ngSubmit)="login()">
+
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email" />
+
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password" />
+
+      <button type="submit" class="primary-btn">
+        Login
+      </button>
+    </form>
+
+    <p class="switch">
+      Don’t have an account?
+      <a routerLink="/register">Register</a>
+    </p>
+  </div>
+</div>
