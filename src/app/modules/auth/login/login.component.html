@@ -1,0 +1,55 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <h2>Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="login()">
+
+      
+      <div class="form-group">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+
+        <small class="error"
+          *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
+          Email is required
+        </small>
+
+        <small class="error"
+          *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">
+          Enter a valid email address
+        </small>
+      </div>
+
+
+      <div class="form-group">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+
+        <small class="error"
+          *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">
+          Password is required
+        </small>
+      </div>
+
+      <button class="primary-btn" type="submit">
+        Login
+      </button>
+
+    </form>
+
+ 
+    <p class="switch">
+      Don’t have an account?
+      <a routerLink="/register">Register</a><br>
+      <a routerLink="/change-password">ChangePassword</a>
+    </p>
+
+  </div>
+</div>
