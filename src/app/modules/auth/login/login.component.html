@@ -16,7 +16,7 @@
         <small class="error"
           *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
           Email is required
-        </small>
+        </small> 
 
         <small class="error"
           *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">
@@ -31,14 +31,14 @@
           placeholder="Password"
           formControlName="password"
         />
-
+ 
         <small class="error"
           *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">
           Password is required
         </small>
       </div>
 
-      <button class="primary-btn" type="submit">
+      <button class="primary-btn" type="submit" [disabled]="form.invalid">
         Login
       </button>
 

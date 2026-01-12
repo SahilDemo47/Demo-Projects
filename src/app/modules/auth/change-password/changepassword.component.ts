@@ -38,29 +38,52 @@ export class ChangePasswordComponent {
     });
   }
 
+changePassword() {
+  // if (this.form.invalid) {
+  //   this.form.markAllAsTouched();
+  //   this.showSnack('Please fill all fields correctly', 'warning');
+  //   return;
+  // }
 
-  changePassword() {
-    if (this.form.invalid) {
-      this.showSnack('Please fill all fields correctly', 'warning');
-      return;
-    }
+  // this.isSubmitting = true;
 
-    this.isSubmitting = true;
+  this.authService.changePassword(this.form.value).subscribe({
+    next: (res: any) => {
+      this.showSnack(res.message, 'success');
+      this.router.navigate(['/login']);
+      this.isSubmitting = false;
+    },
+    error: (err) => {
 
-    this.authService.changePassword(this.form.value).subscribe({
-      next: (res: any) => {
-        this.showSnack(res.message || 'Password changed', 'success');
-        this.router.navigate(['/login']);
-        this.isSubmitting = false;
-      },
-      error: (err) => {
-        if (err.status === 401) {
-          this.showSnack('Old password is incorrect', 'error');
-        } else {
+      let errorBody: any = err.error;
+
+      if (typeof err.error === 'string') {
+        try {
+          errorBody = JSON.parse(err.error);
+        } catch {
           this.showSnack('Failed to change password', 'error');
+          this.isSubmitting = false;
+          return;
         }
-        this.isSubmitting = false;
       }
-    });
-  }
+      if (errorBody?.errors) {
+        const messages: string[] = [];
+        for (const key in errorBody.errors) {
+          messages.push(...errorBody.errors[key]);
+        }
+        this.showSnack(messages.join(', '), 'error');
+        this.isSubmitting = false;
+        return;
+      }
+
+        this.showSnack('Old password is incorrect', 'error');
+        this.isSubmitting = false;
+        // this.showSnack('Failed to change password', 'error');
+        // this.isSubmitting = false;
+          return;
+    }
+  });
+}
+
+
 }

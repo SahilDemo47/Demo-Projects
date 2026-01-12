@@ -41,24 +41,48 @@ showSnack(
   }
 
 
-  register() {
-    if (this.form.invalid) {
-      this.showSnack('Please fill all required fields', 'warning');
+ register() {
+  // FrontEND validation
+  // if (this.form.invalid) {
+  //   this.form.markAllAsTouched();
+  //   this.showSnack('Please fill all required fields', 'warning');
+  //   return;
+  // }
+
+  this.authService.register(this.form.value).subscribe({
+    next: () => {
+      this.showSnack('Registration successful', 'success');
+      this.router.navigate(['/login']);
+    },
+ error: (err) => {
+
+  let errorBody: any = err.error;
+
+
+  if (typeof err.error === 'string') {
+    try {
+      errorBody = JSON.parse(err.error);
+    } catch {
+      this.showSnack('Registration failed', 'error');
       return;
     }
-
-    this.authService.register(this.form.value).subscribe({
-      next: () => {
-        this.showSnack('Registration successful', 'success');
-        this.router.navigate(['/login']);
-      },
-      error: (err) => {
-        if (err.status === 409) {
-          this.showSnack('Email already exists', 'error');
-        } else {
-          this.showSnack('Registration failed', 'error');
-        }
-      }
-    });
   }
+
+
+  if (err.status === 400 && errorBody?.errors) {
+    const messages: string[] = [];
+
+    for (const key in errorBody.errors) {
+      messages.push(...errorBody.errors[key]);
+    }
+
+    this.showSnack(messages.join(', '), 'error');
+    return;
+  }
+
+    }
+  });
+}
+
+  
 }

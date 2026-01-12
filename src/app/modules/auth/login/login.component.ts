@@ -40,27 +40,35 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login() {
-    if (this.form.invalid) {
-      this.showSnack('Please enter valid email and password', 'warning');
-      return;
-    }
+ login() {
 
-    this.authService.login(this.form.value).subscribe({
-      next: (res: any) => {
-        localStorage.setItem('token', res.token);
-        this.showSnack('Login successful', 'success');
-        this.router.navigate(['/dashboard']);
-      },
-      error: (err) => {
-        if (err.status === 404) {
-          this.showSnack('Email does not exist', 'error');
-        } else if (err.status === 401) {
-          this.showSnack('Password is incorrect', 'error');
-        } else {
-          this.showSnack('Login failed', 'error');
-        }
-      }
-    });
+
+  if (this.form.invalid) {
+    this.form.markAllAsTouched();
+    this.showSnack('Please enter valid email and password', 'warning');
+    return;
   }
+
+  this.authService.login(this.form.value).subscribe({
+    next: (res: any) => {
+      localStorage.setItem('token', res.token);
+      this.showSnack('Login successful', 'success');
+      this.router.navigate(['/dashboard']);
+    },
+    error: (err) => {
+
+ 
+      if ( err.error?.errors) {
+        const messages = Object.values(err.error.errors).flat();
+        this.showSnack(messages.join(', '), 'error');
+        return;
+      }
+
+    
+
+    //  this.showSnack('Login failed', 'error');
+    }
+  });
+
+}
 }

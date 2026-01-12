@@ -61,6 +61,26 @@
     }
   }
 }
+.primary-btn {
+  background-color: #1f4bd8;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  background-color: #9ec9ff;   
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+button.primary-btn[disabled] {
+  background-color: #9ec9ff !important;
+  cursor: not-allowed !important;
+  opacity: 0.8;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
