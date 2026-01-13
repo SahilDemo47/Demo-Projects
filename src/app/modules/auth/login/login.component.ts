@@ -41,14 +41,6 @@ export class LoginComponent implements OnInit {
 
 
  login() {
-
-
-  if (this.form.invalid) {
-    this.form.markAllAsTouched();
-    this.showSnack('Please enter valid email and password', 'warning');
-    return;
-  }
-
   this.authService.login(this.form.value).subscribe({
     next: (res: any) => {
       localStorage.setItem('token', res.token);
@@ -63,12 +55,7 @@ export class LoginComponent implements OnInit {
         this.showSnack(messages.join(', '), 'error');
         return;
       }
-
-    
-
-    //  this.showSnack('Login failed', 'error');
     }
   });
-
 }
 }

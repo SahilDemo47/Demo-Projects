@@ -29,13 +29,13 @@ export class ErrorInterceptor implements HttpInterceptor {
           return throwError(() => error);
         }
 
-        let message = 'Something went wrong';
+        let message = '';
 
         if (error.status === 0) {
           message = 'Server not reachable';
         }
         else if (error.status === 500) {
-          message = 'Enter valid Email and Password';
+          message = 'Something went wrong';
         }
 
         this.snackBar.openFromComponent(SnackbarComponent, {

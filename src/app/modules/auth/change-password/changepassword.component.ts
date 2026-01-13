@@ -39,14 +39,6 @@ export class ChangePasswordComponent {
   }
 
 changePassword() {
-  // if (this.form.invalid) {
-  //   this.form.markAllAsTouched();
-  //   this.showSnack('Please fill all fields correctly', 'warning');
-  //   return;
-  // }
-
-  // this.isSubmitting = true;
-
   this.authService.changePassword(this.form.value).subscribe({
     next: (res: any) => {
       this.showSnack(res.message, 'success');
@@ -75,15 +67,7 @@ changePassword() {
         this.isSubmitting = false;
         return;
       }
-
-        this.showSnack('Old password is incorrect', 'error');
-        this.isSubmitting = false;
-        // this.showSnack('Failed to change password', 'error');
-        // this.isSubmitting = false;
-          return;
     }
   });
 }
-
-
 }

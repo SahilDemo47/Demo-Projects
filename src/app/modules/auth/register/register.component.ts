@@ -42,14 +42,7 @@ showSnack(
 
 
  register() {
-  // FrontEND validation
-  // if (this.form.invalid) {
-  //   this.form.markAllAsTouched();
-  //   this.showSnack('Please fill all required fields', 'warning');
-  //   return;
-  // }
-
-  this.authService.register(this.form.value).subscribe({
+    this.authService.register(this.form.value).subscribe({
     next: () => {
       this.showSnack('Registration successful', 'success');
       this.router.navigate(['/login']);
@@ -69,7 +62,7 @@ showSnack(
   }
 
 
-  if (err.status === 400 && errorBody?.errors) {
+  if (errorBody?.errors) {
     const messages: string[] = [];
 
     for (const key in errorBody.errors) {
@@ -82,7 +75,5 @@ showSnack(
 
     }
   });
-}
-
-  
+}  
 }
