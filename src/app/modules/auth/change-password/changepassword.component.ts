@@ -38,6 +38,7 @@ export class ChangePasswordComponent {
     });
   }
 
+
 changePassword() {
   // if (this.form.invalid) {
   //   this.form.markAllAsTouched();
@@ -78,8 +79,8 @@ changePassword() {
 
         this.showSnack('Old password is incorrect', 'error');
         this.isSubmitting = false;
-        // this.showSnack('Failed to change password', 'error');
-        // this.isSubmitting = false;
+
+        
           return;
     }
   });

@@ -14,11 +14,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { SidenavComponent } from 'src/app/components/sidenav/sidenav.component';
+import { StudentlistComponent } from '../studentlist/studentlist.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DashboardComponent, HomeComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    StudentlistComponent
   ],
   imports: [CommonModule, DashboardRoutingModule,
     MatSidenavModule,
@@ -30,6 +33,7 @@ import { SidenavComponent } from 'src/app/components/sidenav/sidenav.component';
     MatButtonModule,
 MatFormFieldModule,
 MatInputModule,
+FormsModule
 
 
   ]

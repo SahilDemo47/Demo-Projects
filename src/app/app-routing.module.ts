@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginGuard } from './core/guards/login.guard';
+import { StudentlistComponent } from './modules/studentlist/studentlist.component';
 
 const routes: Routes = [
 
@@ -28,7 +29,7 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module')
         .then(m => m.DashboardModule)
   },
-
+  
   {
     path: '**',
     redirectTo: 'login'

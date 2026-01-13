@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="home-layout">
+  <div class="top-bar" *ngIf="!isStudentPage">
+    <h2>🎓 Student Management System</h2>
+    <button   routerLink="../student" class="go-btn">
+      ➜ Open Student Management
+    </button>
+  </div>
+
+  <div class="top-bar "  *ngIf="isStudentPage">
+    <button routerLink="/home" class="go-btn m-3 p-3">
+      ⬅ Back To Home
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+

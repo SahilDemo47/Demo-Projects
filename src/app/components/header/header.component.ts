@@ -11,37 +11,37 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  pageTitle = '';
 
-  pageTitle = 'Home';
-
- constructor(
-  private authService: AuthService,
-  private router: Router
-) {}
-
-logout() {
-  this.authService.logout();
-  this.router.navigate(['/login']);
-}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.setPageTitle();
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
-        const title = this.getTitleFromRouteTree(
-          this.router.routerState.snapshot.root
-        );
-        this.pageTitle = title ?? 'Home';
+        this.setPageTitle();
       });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
+  private setPageTitle() {
+    const title = this.getTitleFromRouteTree(this.router.routerState.snapshot.root);
+    this.pageTitle = title ?? '';
   }
 
   private getTitleFromRouteTree(route: any): string | null {
     let current = route;
-
     while (current.firstChild) {
       current = current.firstChild;
     }
-
     return current.data?.['title'] ?? null;
   }
 }

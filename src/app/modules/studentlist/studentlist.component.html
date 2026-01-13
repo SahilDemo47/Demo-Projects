@@ -1,1 +1,82 @@
-<p>studentlist works!</p>
+<!-- 🔍 FILTER + ACTION BAR -->
+<div class="filter-box">
+  <input type="number"
+         placeholder="Search Student ID"
+         [(ngModel)]="filterId"
+         (input)="filterById()"
+         />
+
+  <button class="bulk-btn"
+          *ngIf="selectedIds.length > 0"
+          (click)="deleteSelected()">
+    🗑 Delete Selected ({{selectedIds.length}})
+  </button>
+
+  <button class="cancel-btn"
+          *ngIf="selectedIds.length > 0"
+          (click)="clearSelection()">
+    ❌ Cancel Selection
+  </button>
+
+  <button class="add-btn"
+          (click)="showForm=true; isEdit=false; newStudent={name:'',email:'',age:null}">
+    + Add Student
+  </button>
+</div>
+
+<div class="no-data" *ngIf="noDataFound">❌ No Data Found</div>
+
+<!-- 🧾 CARD LIST -->
+<div class="card-container">
+  <div class="student-card"
+       *ngFor="let s of filteredStudents"
+       [class.active]="selectedIds.includes(s.studentId!)"
+       (click)="openPopup(s)">
+
+    <!-- checkbox must not trigger popup -->
+    <input type="checkbox"
+           class="select-box"
+           [checked]="selectedIds.includes(s.studentId!)"
+           (change)="toggleSelect(s)"
+           (click)="$event.stopPropagation()" />
+
+    <h3>{{ s.name }}</h3>
+    <p><b>ID:</b> {{ s.studentId }}</p>
+    <p>{{ s.email }}</p>
+  </div>
+</div>
+
+<!-- 👁 VIEW POPUP -->
+<div class="overlay" *ngIf="selectedStudent">
+  <div class="popup">
+    <span class="close" (click)="closePopup()">✖</span>
+
+    <h2>{{ selectedStudent?.name }}</h2>
+    <p><b>ID:</b> {{ selectedStudent?.studentId }}</p>
+    <p><b>Email:</b> {{ selectedStudent?.email }}</p>
+    <p><b>Age:</b> {{ selectedStudent?.age }}</p>
+
+    <div class="action-box">
+      <button class="save-btn" (click)="startEdit()">✏ Edit</button>
+      <button class="delete-btn" (click)="deleteStudent()">🗑 Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ➕ ADD / UPDATE FORM -->
+<div class="overlay" *ngIf="showForm">
+  <div class="popup">
+    <span class="close" (click)="showForm=false">✖</span>
+
+    <h2>{{ isEdit ? 'Update Student' : 'Add Student' }}</h2>
+
+    <input type="text" placeholder="Name" [(ngModel)]="newStudent.name"/>
+    <input type="email" placeholder="Email" [(ngModel)]="newStudent.email"/>
+    <input type="number" placeholder="Age" [(ngModel)]="newStudent.age"/>
+
+    <button class="save-btn" (click)="saveStudent()">
+      {{ isEdit ? 'Update' : 'Save' }}
+    </button>
+  </div>
+</div>
+
