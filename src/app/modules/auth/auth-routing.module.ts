@@ -5,10 +5,9 @@ import { RegisterComponent } from './register/register.component';
 import { ChangePasswordComponent } from './change-password/changepassword.component';
 import { LoginDeactivateGuard } from 'src/app/core/guards/login-deactivate.guard';
 
-
 const routes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent },
+  { path: '', component: LoginComponent },                // /login
+  { path: 'register', component: RegisterComponent },     // /login/register
   { path: 'change-password', component: ChangePasswordComponent, canDeactivate: [LoginDeactivateGuard] }
 ];
 
