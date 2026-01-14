@@ -27,7 +27,7 @@ export class AuthService {
   return this.http.post(
     `${this.baseUrl}/auth/RegisterUser`,
     data,
-    { responseType: 'text' }  
+    { responseType: 'text' }
   );
 }
 
@@ -44,10 +44,10 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!this.getToken();
   }
+logout() {
+  localStorage.removeItem('token');
+}
 
-  logout() {
-    localStorage.clear();
-  }
   changePassword(data: ChangePasswordRequest): Observable<ChangePasswordResponse> {
   return this.http.post<ChangePasswordResponse>(
     `${this.baseUrl}/User/ChangePassword`,

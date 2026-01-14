@@ -42,6 +42,7 @@ changePassword() {
   this.authService.changePassword(this.form.value).subscribe({
     next: (res: any) => {
       this.showSnack(res.message, 'success');
+      this.authService.logout();
       this.router.navigate(['/login']);
       this.isSubmitting = false;
     },

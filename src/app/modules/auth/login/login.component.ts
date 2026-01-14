@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
         this.showSnack(messages.join(', '), 'error');
         return;
       }
+
     }
   });
 }

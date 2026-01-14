@@ -1,0 +1,22 @@
+.home-layout {
+  padding: 30px;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;      
+  padding: 12px 20px;     
+  border-radius: 14px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 6px 14px rgba(133, 129, 129, 0.15);
+}
+.go-btn {
+  background: linear-gradient(135deg,#4f9cff,#005eff);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

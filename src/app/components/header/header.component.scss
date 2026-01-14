@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+mat-toolbar {
+  height: 64px;
+  background: linear-gradient(135deg, #a4c7eb, #93add3);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  color: #0c0b0b;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+mat-icon {
+  color: #ffffff;
+}
+
+button[mat-icon-button] {
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+
+button[mat-button] {
+  background: rgba(255,255,255,0.15);
+  color: rgb(20, 19, 19);
+  border-radius: 8px;
+}
