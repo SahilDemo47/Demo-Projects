@@ -1,18 +1,17 @@
+import { ChangePasswordComponent } from './modules/auth/change-password/changepassword.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginGuard } from './core/guards/login.guard';
-import { StudentlistComponent } from './modules/studentlist/studentlist.component';
+import { RegisterComponent } from './modules/auth/register/register.component';
+
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
   },
-
-  // Auth routes (public)
  {
     path: 'login',
     canActivate: [LoginGuard],
@@ -20,6 +19,13 @@ const routes: Routes = [
       import('./modules/auth/auth.module')
         .then(m => m.AuthModule)
   },
+  {
+    path:'register',
+    component:RegisterComponent
+  },
+    // { path: 'change-password',
+    //   component: ChangePasswordComponent,
+    //    canDeactivate: [LoginDeactivateGuard]},
 
 
   {
@@ -29,7 +35,7 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module')
         .then(m => m.DashboardModule)
   },
-  
+
   {
     path: '**',
     redirectTo: 'login'
