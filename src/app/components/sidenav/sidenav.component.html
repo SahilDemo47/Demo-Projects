@@ -13,7 +13,14 @@
 
   <mat-divider></mat-divider>
 
-
+ <a
+    mat-list-item
+    routerLink="./student"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+  Student 
+  </a>
 
 </mat-nav-list>
 

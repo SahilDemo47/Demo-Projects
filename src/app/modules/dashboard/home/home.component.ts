@@ -8,13 +8,5 @@ import { Router,NavigationEnd } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-isStudentPage: boolean = false;
 
-  constructor(private router: Router) {
-    this.router.events.subscribe(e => {
-      if (e instanceof NavigationEnd) {
-        this.isStudentPage = e.url.includes('/home/students');
-      }
-    });
-  }
 }
