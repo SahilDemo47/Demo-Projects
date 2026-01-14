@@ -13,7 +13,7 @@ import { SnackbarComponent } from 'src/app/components/snackbar/snackbar.componen
 export class LoginComponent implements OnInit {
 
   form!: FormGroup;
-
+  hidePassword = true;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-
+  togglePassword(){
+    this.hidePassword=!this.hidePassword;
+  }
  showSnack(
     message: string,
     type: 'success' | 'error' | 'warning' | 'info'

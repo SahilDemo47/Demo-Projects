@@ -14,6 +14,8 @@ export class ChangePasswordComponent {
 
   form!: FormGroup;
   isSubmitting = false;
+  hideOldPassword = true;
+  hideNewPassword = true;
 
   constructor(
     private fb: FormBuilder,
@@ -27,7 +29,13 @@ export class ChangePasswordComponent {
       newPassword: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+ toggleOldPassword() {
+    this.hideOldPassword = !this.hideOldPassword;
+  }
 
+  toggleNewPassword() {
+    this.hideNewPassword = !this.hideNewPassword;
+  }
   showSnack(
     message: string,
     type: 'success' | 'error' | 'warning' | 'info'

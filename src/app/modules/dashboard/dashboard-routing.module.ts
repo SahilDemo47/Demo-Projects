@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { StudentlistComponent } from '../studentlist/studentlist.component';
+import { ChangePasswordComponent } from '../auth/change-password/changepassword.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent ,data:{title:'Home'}},
       {path:'student',component:StudentlistComponent,data:{title:'Student List'}},
+      {path:'change-password',component:ChangePasswordComponent},
       
 {
   path: 'student/:id',

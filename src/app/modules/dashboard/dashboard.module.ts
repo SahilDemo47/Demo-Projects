@@ -15,13 +15,15 @@ import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { SidenavComponent } from 'src/app/components/sidenav/sidenav.component';
 import { StudentlistComponent } from '../studentlist/studentlist.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangePasswordComponent } from '../auth/change-password/changepassword.component';
 
 @NgModule({
   declarations: [DashboardComponent, HomeComponent,
     HeaderComponent,
     SidenavComponent,
-    StudentlistComponent
+    StudentlistComponent,
+    ChangePasswordComponent
   ],
   imports: [CommonModule, DashboardRoutingModule,
     MatSidenavModule,
@@ -31,11 +33,8 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-MatFormFieldModule,
-MatInputModule,
-FormsModule
-
-
-  ]
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule, ReactiveFormsModule]
 })
 export class DashboardModule {}

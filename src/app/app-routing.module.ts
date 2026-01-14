@@ -2,15 +2,14 @@ import { ChangePasswordComponent } from './modules/auth/change-password/changepa
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
-import { LoginGuard } from './core/guards/login.guard';
+
 import { RegisterComponent } from './modules/auth/register/register.component';
+import { LoginGuard } from './core/guards/login.guard';
 
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: '',redirectTo: 'login',pathMatch: 'full'
   },
  {
     path: 'login',

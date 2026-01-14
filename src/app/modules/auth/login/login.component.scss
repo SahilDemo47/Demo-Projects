@@ -16,51 +16,75 @@
 }
 
 .form-group {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   text-align: left;
+  position: relative;
 }
 
 .auth-card input {
   width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  height: 44px;
+  padding: 10px 44px 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box; 
+}
+
+.auth-card input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Eye button */
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+}
+
+.eye-btn:hover {
+  color: #111827;
 }
 
 .error {
-  color: #dc2626;
   font-size: 12px;
+  color: #dc2626;
   margin-top: 4px;
   display: block;
+  min-height: 14px;
 }
 
 .primary-btn {
   width: 100%;
-  padding: 12px;
-  background: #1d4ed8;
+  height: 44px;
+  background: #2563eb;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-.primary-btn:hover {
-  background: #1e40af;
+.primary-btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
 }
 
 .switch {
-  margin-top: 16px;
+  margin-top: 18px;
   font-size: 14px;
 }
 
 .switch a {
-  color: #1d4ed8;
+  color: #2563eb;
   font-weight: 600;
   text-decoration: none;
-}
-
-.switch a:hover {
-  text-decoration: underline;
 }
